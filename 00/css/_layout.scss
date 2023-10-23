@@ -1,0 +1,120 @@
+@import 'mixin.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{text-decoration: none;}
+li{list-style-type: none;}
+html{
+    font-size: 17px;
+}
+body{
+    font-size: 1rem;
+    @include apple;
+}
+.container {
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav.gnb{
+    @include df-r;
+    height: 44px;
+    
+    .container{
+        @include df-r;
+        justify-content: space-between;
+        align-items: center;
+        h1{
+            padding-left: auto;
+        }
+        ul{
+            @include df-r;
+            position: sticky;
+            top: 44px;
+            align-items: center;
+            width: 100%;
+            padding: 0 20px;
+            @include mobile {
+                display: none;
+            }
+            @include tablet{
+                display: none;
+            }
+            
+            li{
+                flex: 1 auto;
+                a{
+                    display: block;
+                    color: $bk6;
+                    height: 44px;
+                    line-height: 44px;
+                    text-align: center;
+                    font-size: 12px;
+                }
+            }
+        }
+        .icnArea{
+            padding: 0 1rem;
+            gap: 24px;
+            @include df-r;
+            @include desktop {
+            
+            }
+            @include desktop {
+                .menu{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+nav.lnb{
+    @include df-r;
+    position: sticky;
+    top: 0;
+    height: 60px;
+    background: $wh6;
+    z-index: 999;
+    
+    &.active{
+        background: $wh8;
+        color: $bk10;
+        border-bottom: 1px solid $bk2;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+    .container{
+        @include df-c;
+        justify-content: center;
+        p{
+            @include df-c;
+            span{
+                &.prod-index{
+                    font-weight: 700;
+                    font-size: 21px;
+                }
+                &:last-child{
+                    font-size: 12px;
+                }
+            }
+            
+        }
+    }
+    
+}
+
+
+// footer
+
+@media (max-width: 832px) {
+    .small-tomato {
+        background-color: tomato;
+    }
+}

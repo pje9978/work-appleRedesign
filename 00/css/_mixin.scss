@@ -1,0 +1,105 @@
+$bk10 : rgb(0, 0, 0);
+$bk8 : rgb(0, 0, 0, 0.8);
+$bk6 : rgb(0, 0, 0, 0.6);
+$bk5 : rgb(0, 0, 0, 0.5);
+$bk2 : rgb(0, 0, 0, 0.2);
+$bk1 : rgb(0, 0, 0, 0.1);
+$wh8 : rgba(255, 255, 255, 0.8);
+$wh6 : rgba(255, 255, 255, 0.6);
+$wh4 : rgba(255, 255, 255, 0.4);
+$wh1 : rgba(255, 255, 255, 0.1);
+
+// 브레이크포인트
+$breakpoint-mobile: 300px;
+$breakpoint-tablet: 853px;
+$breakpoint-desktop: 1024px;
+
+@mixin mobile {
+    @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$breakpoint-desktop}) {
+        @content;
+    }
+}
+// apple fontstyle
+@mixin apple{
+    font-family: 'AppleSDGothicNeo', 'Noto Sans KR', sans-serif;
+}
+
+//flex
+@mixin df-c {
+    display: flex;
+    flex-flow: column;
+}
+
+@mixin df-r {
+    display: flex;
+    flex-flow: row;
+}
+
+@mixin icn24 {
+    icon{
+        width: 24px;
+        height: 24px;
+   
+    }
+}
+@mixin centerflex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin centerPosition {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}
+
+@mixin h2{
+    font-size: 10vw;
+    font-weight: 900;
+    margin-bottom: 5vh;
+    
+}
+@mixin h4{
+    font-size: 5vw;
+    font-weight: 900;
+    margin-bottom: 3vh;
+}
+
+@mixin colorChip{
+    border-radius: 60px;
+    border-color: #8d8d8d;
+    width: 36px;
+    height:36px;
+    -webkit-border-radius: 60px;
+    -moz-border-radius: 60px;
+    -ms-border-radius: 60px;
+    -o-border-radius: 60px;
+    background-color: none;
+    margin: 1vh;
+}
+.colorChip{
+    @include colorChip;
+}
+.colorChip:hover,
+.colorChip:focus{
+
+    border: 1px solid #9e9e9e;
+    box-shadow: 1px 1px 5px $bk2;
+}
